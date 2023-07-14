@@ -1,0 +1,13 @@
+<!-- <p>todos works!</p> -->
+<app-add-todo (todoAdd)=" addTodo($event)" ></app-add-todo>
+
+<h4>Your todos</h4>
+<div *ngIf="todos.length === 0">
+<div class="alert alert-danger" style="font-size: 20px;" role="alert">
+   You have not todo yet!
+</div>
+</div> 
+<div  *ngFor="let todo of todos" >
+    <app-todo-item  [todo]="todo"  (todoDelete)="deleteTodo($event)" (todoCheckbox)="checkTodo($event)"></app-todo-item>
+</div>
+
